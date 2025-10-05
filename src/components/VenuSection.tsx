@@ -1,6 +1,5 @@
 import React from "react";
 import venueImage from "@/assets/gatwala.png"; // replace with your image path
-import mapImage from "@/assets/Map.png";       // replace with your map image path
 
 const VenueInfo = () => {
   return (
@@ -72,7 +71,7 @@ const VenueInfo = () => {
           </p>
           <div className="flex justify-center lg:justify-end">
             <img
-              src={mapImage}
+              src="/Map.png"
               alt="Map location"
               className="rounded-[24px] shadow-md w-[180px] sm:w-[220px] md:w-[250px] lg:w-[194px] h-auto object-cover"
             />
