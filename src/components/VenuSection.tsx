@@ -1,6 +1,6 @@
 import React from "react";
 import venueImage from "@/assets/gatwala.png"; // replace with your image path
-import mapImage from "@/assets/map.png";       // replace with your map image path
+import mapImage from "@/assets/Map.png";       // replace with your map image path
 
 const VenueInfo = () => {
   return (
