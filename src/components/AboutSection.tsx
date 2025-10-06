@@ -1,97 +1,66 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
-import card_item from "@/assets/card_item.jpg";
+import aboutMain from "/main.jpg"; // main large image
+import aboutSmall from "/card.jpg"; // small overlay image
+import colorEffect from "@/assets/bg_footer.png"; // background overlay image
 
-const ProjectsSection = () => {
-  const projects = [
-    {
-      id: "idex",
-      title: "International Dairy Expo 2026 (IDEX)",
-      description:
-        "Explore The Future Of Dairy At IDEX 2026 – A Global Platform Showcasing Innovation, Technology, And Excellence In The Dairy Industry.",
-      image: card_item,
-    },
-    {
-      id: "leftover-festival",
-      title: "LEFT OVER FESTIVAL",
-      description:
-        "A Unique Celebration Of Sustainability, Creativity, And Conscious Living.",
-      image: card_item,
-    },
-    {
-      id: "lokvirsa-expo",
-      title: "Lokvirsa Expo",
-      description:
-        "Lok Virsa Celebrates The Rich Cultural Heritage Of Pakistan Through Art, Music, Crafts, And Traditions.",
-      image: card_item,
-    },
-    {
-      id: "textile-asia",
-      title: "Textile Asia Expo",
-      description:
-        "Asia’s Premier Exhibition For The Textile And Garment Industry. Showcasing Cutting-Edge Technology And Innovations.",
-      image: card_item,
-    },
-    {
-      id: "bed-home-expo",
-      title: "Bed & Home Expo",
-      description:
-        "Discover The Latest In Bedding, Furniture, And Home Décor At The Ultimate Lifestyle Showcase From Comfort To Style. Explore Innovative Solutions.",
-      image: card_item,
-    },
-    {
-      id: "crockery-festival",
-      title: "Crockery Festival",
-      description:
-        "Celebrate Elegance And Functionality With The Finest Selection Of Crockery, Tableware, And Kitchen Essentials.",
-      image: card_item,
-    },
-  ];
-
+const About = () => {
   return (
-    <section id="about" className="pt-40 pb-20 bg-gray-100">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Section Heading */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-green-600">
-            Our Projects
-          </h2>
+    <div
+      className="flex flex-col items-center text-gray-800 relative overflow-hidden"
+    style={{
+  backgroundImage: `linear-gradient(to bottom, #0E447A, #0E447A00), url(${colorEffect})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+}}
+
+    >
+      {/* Dark Overlay (optional) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B4B88]/80 to-white/90 -z-10"></div>
+
+      {/* HEADER SECTION */}
+      <section className="w-full text-center py-16 relative z-10">
+        <h1 className="text-3xl md:text-3xl  mt-10 font-extrabold text-white tracking-wide drop-shadow-lg">
+          ABOUT US
+        </h1>
+      </section>
+
+      {/* INTRODUCTION SECTION */}
+      <section className="max-w-5xl w-full px-6 md:px-12 mb-16 relative z-10">
+        <h2 className="text-3xl md:text-4xl mt-36 font-extrabold text-[#0BB530] mb-4">
+          Introduction to FIEC
+        </h2>
+        <p className="text-lg text-[#0E447A] md:text-gray-800 leading-relaxed">
+          FIEC is a state-of-the-art venue in the heart of Faisalabad, designed
+          to host exhibitions, trade shows, and business events. It serves as a
+          dynamic platform connecting industries, fostering innovation, and
+          driving regional economic growth.
+        </p>
+      </section>
+
+      {/* IMAGE SECTION */}
+      <section className="relative w-full flex justify-start mb-20 px-6 md:px-12 z-10">
+        <div className="relative w-[762.32px] h-[491.9px] max-w-6xl ml-10">
+          {/* Main large image — moved slightly left */}
+          <img
+            src={aboutMain}
+            alt="Main FIEC Venue"
+            className="rounded-[39px] shadow-lg w-full h-auto object-cover transform translate-x-[-20px]"
+          />
+
+          {/* Small overlay image — moved upward & right */}
+          <div className="absolute -bottom-[-150px] right-[-260px] w-[300px] md:w-[400px] shadow-2xl rounded-2xl bg-white overflow-hidden">
+            <img
+              src={aboutSmall}
+              alt="FIEC Exhibition"
+              className="rounded-2xl w-full h-auto"
+            />
+          </div>
         </div>
+      </section>
 
-        {/* Project Cards */}
-        <div className="flex flex-wrap justify-center gap-8">
-          {projects.map((project) => (
-            <Card
-              key={project.id}
-              className="relative w-[340px] h-[240px] overflow-hidden rounded-xl shadow-lg cursor-pointer group transition-transform transform hover:scale-[1.04] duration-300 ease-in-out"
-            >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url(${project.image})` }}
-              ></div>
-
-              {/* Default White Overlay (visible before hover) */}
-              <div className="absolute inset-0 bg-white/50 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
-
-              {/* Hover Blue Overlay */}
-              <div className="absolute inset-0 bg-[#0E447A]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              {/* Text */}
-              <div className="absolute  mt-12 inset-0 flex flex-col items-center justify-center text-center z-10 transition-colors duration-300 text-[#0E447A] group-hover:text-white px-6">
-                <h3 className="text-[20px]  font-bold mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-[12px] leading-relaxed max-w-[90%]">
-                  {project.description}
-                </p>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 
-export default ProjectsSection;
+export default About;
