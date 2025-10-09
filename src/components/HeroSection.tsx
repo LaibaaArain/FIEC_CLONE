@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import heroImage from "@/assets/bg_hero.png";
 import colorEffect from "@/assets/coloreffect_hero.png";
 
@@ -20,7 +26,7 @@ const HeroSection = () => {
       id="home"
       className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
     >
-      {/* Two Background Images (Main + Radiant Effect) */}
+      {/* Two Background Images */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -32,15 +38,18 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-snug md:leading-tight animate-fade-in">
+        {/* ✅ Responsive heading spacing */}
+        <h1
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl 
+          mb-4 sm:mb-6 md:mb-8 leading-snug md:leading-tight animate-fade-in"
+        >
           WHERE BUSINESS MEETS
           <br />
           <span className="text-white font-bold">OPPORTUNITY</span>
         </h1>
 
         {/* Hall Selection + CTA */}
-<div className="max-w-2xl mx-auto mt-60 bg-black/15 backdrop-blur-md rounded-2xl p-6 shadow-xl">
-
+        <div className="max-w-2xl mx-auto mt-32 sm:mt-40 md:mt-48 lg:mt-60 bg-black/15 backdrop-blur-md rounded-2xl p-6 shadow-xl">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
             <Select value={selectedHall} onValueChange={setSelectedHall}>
               <SelectTrigger className="w-full md:w-[300px] bg-white text-foreground rounded-2xl">

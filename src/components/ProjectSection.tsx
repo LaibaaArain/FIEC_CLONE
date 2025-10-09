@@ -49,11 +49,14 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="about" className="pt-40 pb-20 bg-gray-100">
+    <section
+      id="about"
+      className="pt-20 md:pt-32 lg:pt-40 pb-16 md:pb-20 bg-gray-100"
+    >
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Heading */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-green-600">
+        <div className="text-center mb-10 md:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 text-green-600">
             Our Projects
           </h2>
         </div>
@@ -63,7 +66,7 @@ const ProjectsSection = () => {
           {projects.map((project) => (
             <Card
               key={project.id}
-              className="relative w-[340px] h-[240px] overflow-hidden rounded-xl shadow-lg cursor-pointer group transition-transform transform hover:scale-[1.04] duration-300 ease-in-out"
+              className="relative w-[320px] sm:w-[340px] h-[220px] sm:h-[240px] overflow-hidden rounded-xl shadow-lg cursor-pointer group transition-transform transform hover:scale-[1.04] duration-300 ease-in-out"
             >
               {/* Background Image */}
               <div
@@ -71,15 +74,15 @@ const ProjectsSection = () => {
                 style={{ backgroundImage: `url(${project.image})` }}
               ></div>
 
-              {/* Default White Overlay (visible before hover) */}
+              {/* Default White Overlay */}
               <div className="absolute inset-0 bg-white/50 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
 
               {/* Hover Blue Overlay */}
               <div className="absolute inset-0 bg-[#0E447A]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               {/* Text */}
-              <div className="absolute  mt-12 inset-0 flex flex-col items-center justify-center text-center z-10 transition-colors duration-300 text-[#0E447A] group-hover:text-white px-6">
-                <h3 className="text-[20px]  font-bold mb-3">
+              <div className="absolute mt-12 inset-0 flex flex-col items-center justify-center text-center z-10 transition-colors duration-300 text-[#0E447A] group-hover:text-white px-6">
+                <h3 className="text-[18px] sm:text-[20px] font-bold mb-3">
                   {project.title}
                 </h3>
                 <p className="text-[12px] leading-relaxed max-w-[90%]">

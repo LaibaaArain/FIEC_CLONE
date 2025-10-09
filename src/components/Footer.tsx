@@ -26,29 +26,30 @@ const Footer = () => {
     <footer
       className="relative text-white bg-[#0E447A] bg-cover bg-no-repeat bg-center"
       style={{
-        backgroundImage: `url(${bgFooter})`, // ✅ image on top of solid color
-        backgroundBlendMode: "overlay", // ✅ blends with blue color
+        backgroundImage: `url(${bgFooter})`,
+        backgroundBlendMode: "overlay",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* ✅ Responsive grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-center lg:text-left">
           
           {/* Left Section */}
-          <div className="lg:col-span-2 ml-6 md:ml-10 lg:ml-12">
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start">
+            <div className="flex items-center justify-center lg:justify-start space-x-2 mb-4">
               <img src={fiacLogo} alt="FIEC Logo" className="h-10 mr-2" />
             </div>
 
-            <p className="text-sm opacity-90 mb-4 max-w-lg">
+            <p className="text-sm opacity-90 mb-4 max-w-lg mx-auto lg:mx-0">
               A world-class venue designed to host exhibitions, trade shows, and global
               business events. The Expo Center connects industries, innovators, and
               opportunities under one dynamic roof.
             </p>
 
             {/* Social Media Icons */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex justify-center lg:justify-start gap-3 mt-6">
               <Button variant="ghost" size="icon" className="w-10 h-10 rounded-full bg-white hover:bg-gray-200">
                 <Youtube className="h-5 w-5 text-blue-800" />
               </Button>
@@ -91,6 +92,7 @@ const Footer = () => {
           </Button>
         )}
 
+        {/* Footer bottom text */}
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-80">
           <p>All Rights Reserved. | Developed by SAR ZONE</p>
         </div>
