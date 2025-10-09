@@ -57,6 +57,11 @@ const Navbar = () => {
               <Link to="/about">About Us</Link>
             </Button>
 
+            <Button variant="ghost" className="text-white hover:bg-white/20" asChild>
+              <Link to="/gallery">Gallery</Link>
+            </Button>
+
+
             {/* Venue Info Dropdown */}
             <NavigationMenu>
               <NavigationMenuList>
@@ -84,9 +89,7 @@ const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Button variant="ghost" className="text-white hover:bg-white/20" asChild>
-              <a href="#gallery">Gallery</a>
-            </Button>
+            
 
             <Button variant="ghost" className="text-white hover:bg-white/20" asChild>
               <a href="#events">Events</a>
