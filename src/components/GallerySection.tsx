@@ -4,6 +4,7 @@ import img1 from "@assets/G_0.svg";
 import img2 from "@assets/G_1.svg";
 import img3 from "@assets/G_2.svg";
 import img4 from "@assets/G_3.svg";
+import img5 from "@assets/G_5.svg";
 import img6 from "@assets/G_6.jpg";
 import img7 from "@assets/G_6.svg";
 import img9 from "@assets/G_8.svg";
@@ -36,9 +37,77 @@ const GallerySection = () => {
         </p>
       </section>
 
-      {/* Gallery Section */}
-     
-  </div>  );
+      {/* ===== Row 1 ===== */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-10 py-6">
+        <div className="sm:col-span-2 h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+          <img
+            src={img1}
+            alt="Large Gallery"
+            className="w-full h-full object-cover brightness-110"
+          />
+        </div>
+
+        <div className="h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+          <img
+            src={img2}
+            alt="Small Gallery"
+            className="w-full h-full object-cover brightness-110"
+          />
+        </div>
+      </div>
+
+      {/* ===== Row 2 ===== */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-10 py-6">
+        {[img2, img4, img5].map((image, i) => (
+          <div
+            key={i}
+            className="h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src={image}
+              alt="Gallery"
+              className="w-full h-full object-cover brightness-110"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* ===== Row 3 ===== */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-10 py-6">
+        <div className="h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+          <img
+            src={img6}
+            alt="Large Gallery"
+            className="w-full h-full object-cover brightness-110"
+          />
+        </div>
+
+        <div className="sm:col-span-1 lg:col-span-2 h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+          <img
+            src={img3}
+            alt="Small Gallery"
+            className="w-full h-full object-cover brightness-110"
+          />
+        </div>
+      </div>
+
+      {/* ===== Row 4 ===== */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-10 py-6">
+        {[img9, img7, img10].map((image, i) => (
+          <div
+            key={i}
+            className="h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src={image}
+              alt="Gallery"
+              className="w-full h-full object-cover brightness-110"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default GallerySection;
