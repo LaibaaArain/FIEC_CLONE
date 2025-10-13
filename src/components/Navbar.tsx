@@ -61,6 +61,11 @@ const Navbar = () => {
               <Link to="/gallery">Gallery</Link>
             </Button>
 
+             <Button variant="ghost" className="text-white hover:bg-white/20" asChild>
+              <Link to="/event">Event</Link>
+            </Button>
+
+
 
             {/* Venue Info Dropdown */}
             <NavigationMenu>
@@ -91,9 +96,7 @@ const Navbar = () => {
 
             
 
-            <Button variant="ghost" className="text-white hover:bg-white/20" asChild>
-              <a href="#events">Events</a>
-            </Button>
+           
           </div>
 
           {/* Mobile Menu */}
@@ -141,20 +144,6 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                <a
-                  href="#gallery"
-                  className="text-lg font-medium hover:text-[#0E447A]"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Gallery
-                </a>
-                <a
-                  href="#events"
-                  className="text-lg font-medium hover:text-[#0E447A]"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Events
-                </a>
               </nav>
             </SheetContent>
           </Sheet>
