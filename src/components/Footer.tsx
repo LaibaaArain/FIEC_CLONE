@@ -94,7 +94,7 @@ const Footer = () => {
 
         {/* Footer bottom text */}
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-80">
-          <p>All Rights Reserved. | Developed by SAR ZONE</p>
+          <p>All Rights Reserved. | Developed by LaibaAkbar</p>
         </div>
       </div>
     </footer>
